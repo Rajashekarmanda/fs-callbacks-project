@@ -14,6 +14,6 @@ fs.readFile('storeData/fileNames.txt','utf8',(error,data) => {
             }else{
                 console.log(`deleted ${eachFile}`)
             }
-        })
+        }) 
     }
 })
