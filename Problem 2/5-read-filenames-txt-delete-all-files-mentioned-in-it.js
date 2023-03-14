@@ -10,7 +10,7 @@ fs.readFile('storeData/fileNames.txt','utf8',(error,data) => {
     for (let eachFile of data.split('\n')){
         fs.unlink(`storeData/${eachFile}`,function(error){
             if (error){
-                console.log(error)
+                throw new Error(error)
             }else{
                 console.log(`deleted ${eachFile}`)
             }

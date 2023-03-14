@@ -4,8 +4,12 @@ const fs = require('fs')
 
 function deletingJSONFiles(directoryName,filename){
 
-    fs.unlink(`${directoryName}/${filename}`,function() {
-        fs.rmdir(`${directoryName}`)
+    fs.unlink(`${directoryName}/${filename}`,(error) =>{
+        if (error){
+            throw new Error(error)
+        }else{
+            console.log(`deleted ${filename} successfully.`)
+        }
     })
 }
 

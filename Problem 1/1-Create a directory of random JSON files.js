@@ -11,5 +11,4 @@ function createRandomJSONFile(directoryName,randomJSONFileName, data) {
         })
     });
 }
-
 module.exports = createRandomJSONFile
