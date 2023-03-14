@@ -1,13 +1,22 @@
+// 2. Convert the content to uppercase & write to a new file. Store the name of the new file in filenames.txt
+
 const fs = require('fs')
 
 fs.readFile('lipsum.txt','utf8',(error,data) =>{
     if (error) {
-        throw new error('Error whilte reading data')
+        throw new Error(error)
     }else{
-        // console.log(data)
-        let lipsumData = data.toUpperCase()
-        console.log(lipsumData)
-        fs.writeFileSync('storeData/lipsumUpperCaseData.txt',lipsumData)
-        fs.writeFileSync('storeData/fileNames.txt','lipsumUpperCaseData.txt')
+        let lipsumDataUpperCase = data.toUpperCase()
+        // console.log(lipsumDataUpperCase)
+        fs.writeFile('storeData/lipsumUpperCaseData.txt',lipsumDataUpperCase,(error) => {
+            if (error){
+                throw new Error(error)
+            }
+        })
+        fs.writeFile('storeData/fileNames.txt','lipsumUpperCaseData.txt',(error) => {
+            if (error){
+                throw new Error(error)
+            }
+        })
     }
 })

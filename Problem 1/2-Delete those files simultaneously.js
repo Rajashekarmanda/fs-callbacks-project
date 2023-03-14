@@ -1,3 +1,5 @@
+// 2. Delete those files simultaneously 
+
 const fs = require('fs')
 
 function deletingJSONFiles(directoryName,filename){

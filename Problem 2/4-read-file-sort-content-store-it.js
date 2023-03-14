@@ -1,3 +1,5 @@
+// 4. Read the new files, sort the content, write it out to a new file. Store the name of the new file in filenames.txt
+
 const fs = require('fs')
 
 fs.readFile('lipsum.txt','utf8',(error,data) =>{
@@ -7,13 +9,17 @@ fs.readFile('lipsum.txt','utf8',(error,data) =>{
     }else{
         // console.log(data)
         let fetchedData = data.split('.')
-        fetchedData = fetchedData.sort()
-        fetchedData = fetchedData.join('\n')
+        fetchedDataSort = fetchedData.sort()
+        fetchedDataSort = fetchedDataSort.join('\n')
         // console.log(fetchedData)
-        fs.writeFileSync('storeData/sortedData.txt',fetchedData)
+        fs.writeFile('storeData/sortedData.txt',fetchedDataSort,(error) =>{
+            if (error){
+                throw new Error(error)
+            }
+        })
         fs.appendFile('storeData/fileNames.txt','\nsortedData.txt', (error)=>{
             if (error){
-                throw new error
+                throw new Error(error)
             }
         })
         

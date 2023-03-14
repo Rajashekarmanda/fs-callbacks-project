@@ -1,3 +1,5 @@
+// 5. Read the contents of filenames.txt and delete all the new files that are mentioned in that list simultaneously.
+
 const fs = require('fs')
 
 fs.readFile('storeData/fileNames.txt','utf8',(error,data) => {

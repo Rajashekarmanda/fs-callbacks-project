@@ -1,8 +1,14 @@
+// 1. Create a directory of random JSON files
+
 const fs = require('fs')
 
 function createRandomJSONFile(directoryName,randomJSONFileName, data) {
     fs.mkdir(`${directoryName}`, function () {
-        fs.writeFileSync(`./${directoryName}/${randomJSONFileName}.json`, data)
+        fs.writeFile(`./${directoryName}/${randomJSONFileName}.json`, data,(error)=> {
+            if (error){
+                throw new Error(error)
+            }
+        })
     });
 }
 
