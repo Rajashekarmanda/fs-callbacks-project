@@ -2,9 +2,10 @@
 
 const fs = require('fs')
 
-fs.readFile('lipsum.txt','utf8',(error,data) => {
-    if (error){
-        throw new Error(error) 
+fs.readFile('lipsum.txt', 'utf8', (err, data) => {
+    if (err) {
+        console.error(err)
+    } else {
+        console.log(data)
     }
-    console.log(data)
 })

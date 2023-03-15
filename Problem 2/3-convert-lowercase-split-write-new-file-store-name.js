@@ -2,24 +2,27 @@
 
 const fs = require('fs')
 
-fs.readFile('lipsum.txt','utf8',(error,data) =>{
-    if (error) {
-        throw new error('Error whilte reading data')
+fs.readFile('lipsum.txt','utf8',(err,data) =>{
+    if (err) {
+        console.error(err)
 
     }else{
-
         let fetchedDataLowerCase = data.toLowerCase()
         fetchedDataLowerCase = fetchedDataLowerCase.split('.')
         // console.log(fetchedData.join('\n'))
         fetchedDataLowerCase = fetchedDataLowerCase.join('\n')
-        fs.writeFile('storeData/lipsumLowerCaseData.txt',fetchedDataLowerCase,(error)=>{
-            if (error){
-                throw new Error(error)
+        fs.writeFile('storeData/lipsumLowerCaseData.txt',fetchedDataLowerCase,(err,data)=>{
+            if (err){
+                console.error(err)
+            }else{
+                console.log(data)
             }
         })
-        fs.appendFile('storeData/fileNames.txt','\nlipsumLowerCaseData.txt', (error) =>{
-            if (error){
-                throw new Error(error)
+        fs.appendFile('storeData/fileNames.txt','\nlipsumLowerCaseData.txt', (err,data) =>{
+            if (err){
+                console.error(err)
+            }else{
+                console.log(data)
             }
         })
     }

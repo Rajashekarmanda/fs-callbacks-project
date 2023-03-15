@@ -2,9 +2,9 @@
 
 const fs = require('fs')
 
-fs.readFile('lipsum.txt','utf8',(error,data) =>{
-    if (error) {
-        throw new error('Error whilte reading data')
+fs.readFile('lipsum.txt','utf8',(err,data) =>{
+    if (err) {
+        console.log(err)
 
     }else{
         // console.log(data)
@@ -12,14 +12,18 @@ fs.readFile('lipsum.txt','utf8',(error,data) =>{
         fetchedDataSort = fetchedData.sort()
         fetchedDataSort = fetchedDataSort.join('\n')
         // console.log(fetchedData)
-        fs.writeFile('storeData/sortedData.txt',fetchedDataSort,(error) =>{
-            if (error){
-                throw new Error(error)
+        fs.writeFile('storeData/sortedData.txt',fetchedDataSort,(err,data) =>{
+            if (err){
+                console.log(err)
+            }else{
+                console.log(data)
             }
         })
-        fs.appendFile('storeData/fileNames.txt','\nsortedData.txt', (error)=>{
-            if (error){
-                throw new Error(error)
+        fs.appendFile('storeData/fileNames.txt','\nsortedData.txt', (err,data)=>{
+            if (err){
+                console.log(err)
+            }else{
+                console.log(data)
             }
         })
         

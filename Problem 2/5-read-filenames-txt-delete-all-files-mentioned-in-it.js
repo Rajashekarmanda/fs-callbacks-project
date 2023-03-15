@@ -2,15 +2,15 @@
 
 const fs = require('fs')
 
-fs.readFile('storeData/fileNames.txt','utf8',(error,data) => {
-    if (error){
-        throw new error
+fs.readFile('storeData/fileNames.txt','utf8',(err,data) => {
+    if (err){
+        console.error(err)
     }
     console.log(data.split('\n'))
     for (let eachFile of data.split('\n')){
-        fs.unlink(`storeData/${eachFile}`,function(error){
-            if (error){
-                throw new Error(error)
+        fs.unlink(`storeData/${eachFile}`,(err,data) =>{
+            if (err){
+                console.error(err)
             }else{
                 console.log(`deleted ${eachFile}`)
             }
