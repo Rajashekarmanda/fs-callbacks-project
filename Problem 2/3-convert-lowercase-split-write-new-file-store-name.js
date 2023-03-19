@@ -9,7 +9,6 @@ fs.readFile('lipsum.txt','utf8',(err,data) =>{
     }else{
         let fetchedDataLowerCase = data.toLowerCase()
         fetchedDataLowerCase = fetchedDataLowerCase.split('.')
-        // console.log(fetchedData.join('\n'))
         fetchedDataLowerCase = fetchedDataLowerCase.join('\n')
         fs.writeFile('storeData/lipsumLowerCaseData.txt',fetchedDataLowerCase,(err,data)=>{
             if (err){

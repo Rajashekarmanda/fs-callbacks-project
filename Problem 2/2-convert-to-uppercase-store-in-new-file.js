@@ -7,7 +7,6 @@ fs.readFile('lipsum.txt','utf8',(err,data) =>{
         console.error(err)
     }else{
         let lipsumDataUpperCase = data.toUpperCase()
-        // console.log(lipsumDataUpperCase)
         fs.writeFile('storeData/lipsumUpperCaseData.txt',lipsumDataUpperCase,(err,data) => {
             if (err){
                 console.error(err)

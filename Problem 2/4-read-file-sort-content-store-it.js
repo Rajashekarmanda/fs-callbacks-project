@@ -7,11 +7,9 @@ fs.readFile('lipsum.txt','utf8',(err,data) =>{
         console.log(err)
 
     }else{
-        // console.log(data)
         let fetchedData = data.split('.')
         fetchedDataSort = fetchedData.sort()
         fetchedDataSort = fetchedDataSort.join('\n')
-        // console.log(fetchedData)
         fs.writeFile('storeData/sortedData.txt',fetchedDataSort,(err,data) =>{
             if (err){
                 console.log(err)
