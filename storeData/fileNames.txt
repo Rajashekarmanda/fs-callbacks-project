@@ -1,3 +1,2 @@
-lipsumUpperCaseData.txt
-lipsumLowerCaseData.txt
+lipsumUpperCaseData.txtt
 sortedData.txt
